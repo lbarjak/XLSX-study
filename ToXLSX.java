@@ -11,12 +11,11 @@ public class ToXLSX implements GlobalVariables {
 
     XSSFWorkbook wb = new XSSFWorkbook();
     int rowsize;
-    
-    public void write() throws FileNotFoundException, IOException {
-        String sheetName;
 
-        for (int i = 0; i < SHEET_NAMES.size(); i++) {
-            sheetName = SHEET_NAMES.get(i);
+    public void write() throws FileNotFoundException, IOException {
+
+        for (String sheetName : SHEET_NAMES) {
+
             XSSFSheet sheet = wb.createSheet(sheetName);
             int r = 0;
             for (String key : MAP.get(sheetName).keySet()) {
