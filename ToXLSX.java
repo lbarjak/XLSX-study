@@ -14,8 +14,7 @@ public class ToXLSX implements GlobalVariables {
 
     public void write() throws FileNotFoundException, IOException {
 
-        for (String sheetName : SHEET_NAMES) {
-
+        for (String sheetName : MAP.keySet()) {
             XSSFSheet sheet = wb.createSheet(sheetName);
             int r = 0;
             for (String key : MAP.get(sheetName).keySet()) {
